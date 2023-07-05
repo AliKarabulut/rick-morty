@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     colors: {
       'background': '#44281d',
+      'background2': '#f1f1f1',
       'text': '#e4a788',
       'hover': "#97ce4c",
       'icon': "#f0e14a"

@@ -13,8 +13,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar/>
-        <main>{children}</main>
+        <Navbar />
+        <main className="grid grid-cols-4 gap-8 w-4/5  justify-items-center">
+          {children}
+        </main>
       </body>
     </html>
   );
