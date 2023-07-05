@@ -4,7 +4,6 @@ import { gql } from "@apollo/client";
 
 const Page = async ({ searchParams }) => {
   const params = searchParams?.page || 1;
-
   const query = gql`
   {
     characters(page: ${params}) {
@@ -18,7 +17,6 @@ const Page = async ({ searchParams }) => {
   }`;
 
   const { data } = await getClient().query({ query });
-  console.log(data.characters);
 
   return data.characters.results.map((character) => (
     <CharacterCard character={character} key={character.id} />
