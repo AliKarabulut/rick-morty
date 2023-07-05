@@ -53,7 +53,7 @@ const Search = () => {
         onBlur={blurHandler}
         type="text"
         placeholder="Search"
-        className="w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-background focus:outline-none focus:border-b-yellow-700 focus:bg-white focus:shadow-shadow1 focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-b-yellow-700 hover:bg-white hover:shadow-shadow1"
+        className="w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-background focus:outline-none focus:border-b-yellow-700 focus:bg-white  focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-b-yellow-700 hover:bg-white "
       />
       {active && <SearchResults fil={filteredCharacters} />}
     </div>
