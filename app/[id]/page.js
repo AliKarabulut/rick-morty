@@ -2,6 +2,29 @@ import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
 
+export const dynamicParams = false
+export async function generateStaticParams() {
+  const query = gql`
+    query Query {
+      characters {
+        info {
+          count
+        }
+      }
+    }
+  `;
+
+  const { data } = await getClient().query({ query });
+
+  const staticParams = [];
+  for (let index = 0; index < data.characters.info.count; index++) {
+    staticParams.push({ id: String(index) });
+  }
+  return staticParams;
+}
+
+
+
 const CharacterInfo = async ({ params }) => {
   const query = gql`
     query Query($characterId: ID!) {
@@ -82,4 +105,5 @@ const CharacterInfo = async ({ params }) => {
     </div>
   );
 };
+
 export default CharacterInfo;
