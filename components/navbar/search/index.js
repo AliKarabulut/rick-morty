@@ -4,17 +4,19 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { useEffect, useState } from "react";
 import { gql } from "@apollo/client";
 import { BsSearch } from "react-icons/bs";
+import SearchResults from "./searchResults";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
+  const [active, setActive] = useState(false);
 
   let timerId;
   const requestHandler = (event) => {
     clearTimeout(timerId);
     timerId = setTimeout(() => {
       setSearch(event.target.value);
-    }, 150);
+    }, 50);
   };
 
   const GET_CHARACTERS = gql`
@@ -22,6 +24,7 @@ const Search = () => {
       characters(filter: { name: $name }) {
         results {
           name
+          id
         }
       }
     }
@@ -30,21 +33,29 @@ const Search = () => {
   const { data } = useSuspenseQuery(GET_CHARACTERS, {
     variables: { name: search },
   });
-  
+
   useEffect(() => {
-    setFilteredCharacters(data.characters.results)
-  }, [data])
-  
+    setFilteredCharacters(data.characters.results);
+  }, [data]);
+
+  const blurHandler = () => {
+    setTimeout(() => {
+      setActive(false);
+    }, 100);
+  };
 
   return (
     <div className="flex leading-7 relative items-center basis-2/5">
-      <BsSearch className="absolute left-4 text-icon w-4 h-4" />
+      <BsSearch className="absolute left-4 text-icon w-4 h-4 z-30" />
       <input
         onChange={requestHandler}
+        onFocus={() => setActive(true)}
+        onBlur={blurHandler}
         type="text"
         placeholder="Search"
-        className="w-full h-10 leading-7 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none bg-slate-100 text-text transition-all placeholder:text-background focus:outline-none focus:border-b-yellow-700 focus:bg-white focus:shadow-shadow1 hover:outline-none hover:border-b-yellow-700 hover:bg-white hover:shadow-shadow1"
+        className="w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-background focus:outline-none focus:border-b-yellow-700 focus:bg-white focus:shadow-shadow1 focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-b-yellow-700 hover:bg-white hover:shadow-shadow1"
       />
+      {active && <SearchResults fil={filteredCharacters} />}
     </div>
   );
 };
