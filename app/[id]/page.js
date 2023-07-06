@@ -2,7 +2,7 @@ import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
 
-export const dynamicParams = false
+export const dynamicParams = false;
 export async function generateStaticParams() {
   const query = gql`
     query Query {
@@ -22,8 +22,6 @@ export async function generateStaticParams() {
   }
   return staticParams;
 }
-
-
 
 const CharacterInfo = async ({ params }) => {
   const query = gql`
