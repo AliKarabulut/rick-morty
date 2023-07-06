@@ -60,6 +60,8 @@ const CharacterInfo = async ({ params }) => {
         alt={data.character.name}
         width={300}
         height={300}
+        placeholder="blur"
+        blurDataURL="/grey2.png"
         className="px-4 py-4 rounded-3xl drop-shadow-2xl"
       />
 
