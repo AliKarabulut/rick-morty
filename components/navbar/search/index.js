@@ -1,5 +1,4 @@
 "use client";
-
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { useEffect, useState } from "react";
 import { gql } from "@apollo/client";
@@ -16,7 +15,7 @@ const Search = () => {
     clearTimeout(timerId);
     timerId = setTimeout(() => {
       setSearch(event.target.value);
-    }, 50);
+    }, 100);
   };
 
   const GET_CHARACTERS = gql`
@@ -41,7 +40,7 @@ const Search = () => {
   const blurHandler = () => {
     setTimeout(() => {
       setActive(false);
-    }, 100);
+    }, 150);
   };
 
   return (
@@ -53,7 +52,8 @@ const Search = () => {
         onBlur={blurHandler}
         type="text"
         placeholder="Search"
-        className="w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-background focus:outline-none focus:border-b-yellow-700 focus:bg-white  focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-b-yellow-700 hover:bg-white "
+        spellCheck="false"
+        className="capitalize w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-background focus:outline-none focus:border-text focus:bg-white  focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-text hover:bg-white "
       />
       {active && <SearchResults fil={filteredCharacters} />}
     </div>

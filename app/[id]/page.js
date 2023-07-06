@@ -49,7 +49,6 @@ const CharacterInfo = async ({ params }) => {
     query,
     variables: { characterId: params.id },
   });
-  console.log(data);
   return (
     <div className=" relative w-full h-screen text-center overflow-hidden">
       <h1 className="text-3xl font-bold text-background ">

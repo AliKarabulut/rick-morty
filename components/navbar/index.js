@@ -4,7 +4,7 @@ import { LuGithub } from "react-icons/lu";
 import Link from "next/link";
 import { ApolloWrapper } from "@/lib/apollo-provider";
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <nav className="w-full flex justify-between items-center px-4 pb-2 shadow-md mb-4">
       <Link href="/">

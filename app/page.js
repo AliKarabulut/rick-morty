@@ -35,7 +35,7 @@ const Page = async ({ searchParams }) => {
       {data.characters.results.map((character) => (
         <CharacterCard character={character} key={character.id} />
       ))}
-      <PageNumber totalPages={data.characters.info.pages} activePage={params} />
+      {/* <PageNumber totalPages={data.characters.info.pages} activePage={params} /> */}
     </main>
   );
 };

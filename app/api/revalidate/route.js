@@ -11,7 +11,7 @@ export async function GET(request) {
 
   const formattedDateTime = `${day}/${month} ${hour}:${minute}:${second}`;
 
-  const path = "/[id]";
+  const path = "/";
   revalidatePath(path);
   return NextResponse.json({
     revalidated: true,

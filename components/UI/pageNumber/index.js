@@ -7,7 +7,7 @@ const PageNumber = ({ totalPages, activePage }) => {
   const [page, setPage] = useState(totalPages);
 
   const array = Array(7).fill(1);
-console.log(array)
+// console.log(array)
   return (
     <div className="flex items-center">
       <LiaLessThanSolid />
