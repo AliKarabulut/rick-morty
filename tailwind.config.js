@@ -23,7 +23,17 @@ module.exports = {
       boxShadow: {
         shadow1: "0 0 0 4px rgba(234, 76, 137, 0.1)",
       },
+      animation: {
+        scale: "scale 1s ease-in-out infinite",
+      },
+      keyframes: {
+        scale: {
+          "0%, 100%": { transform: "scale(1)" },
+          "33%": { transform: "scale(.3)" },
+        },
+      },
     },
+    
   },
   plugins: [],
 };
