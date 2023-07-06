@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import ScroolUp from "@/components/scroolUp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         {children}
+        <ScroolUp/>
       </body>
     </html>
   );
