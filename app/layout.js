@@ -3,6 +3,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import ScroolUp from "@/components/scroolUp";
 import { cookies } from "next/headers";
+import { StoreProvider } from "@/stores/store-provider";
+import { store } from "@/stores";
+import { getViewed } from "@/stores/viewed";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,13 +17,22 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const theme = cookies().get("theme");
+
+  await store.dispatch(getViewed(123))
+  const { viewed } = store.getState().viewed;
+  console.log(viewed);
+
   return (
     <html lang="en" className={theme?.value}>
-      <body className={`${inter.className} bg-bodyBack dark:bg-dark_bodyBack`}>
-        <Navbar />
-        {children}
-        <ScroolUp />
-      </body>
+      <StoreProvider preloadedState={{ viewed: { viewed } }}>
+        <body
+          className={`${inter.className} bg-bodyBack dark:bg-dark_bodyBack`}
+        >
+          <Navbar />
+          {children}
+          <ScroolUp />
+        </body>
+      </StoreProvider>
     </html>
   );
 }

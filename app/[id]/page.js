@@ -120,7 +120,7 @@ const CharacterInfo = async ({ params }) => {
         <ul className="text-left max-lg:flex flex-wrap  gap-2 max-lg:mx-7  lg:eHeight overflow-y-auto ">
           {data.character.episode.map((episode, index) => {
             const bgColor =
-              index % 2 === 0 ? "bg-li1 dark:dark_li1" : "bg-li2 dark:dark_li2";
+              index % 2 === 0 ? "bg-li1 dark:bg-dark_li1" : "bg-li2 dark:bg-dark_li2";
             return (
               <li
                 key={index}

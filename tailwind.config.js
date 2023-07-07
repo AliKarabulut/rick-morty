@@ -19,7 +19,7 @@ module.exports = {
         selectedText: "#000000",
         bgCard: "#72A7D7",
         borderPicture: "#000000",
-        icon: "#007AB3",
+        icon: "#D4EAF7",
         text: "#000000",
         bigText: "#6B7280",
         li1: "#94BCE0",

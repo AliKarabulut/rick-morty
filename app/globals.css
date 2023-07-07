@@ -38,3 +38,6 @@
   border-radius: 16px;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #646464;
+}
