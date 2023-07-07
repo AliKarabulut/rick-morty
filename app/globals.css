@@ -15,6 +15,9 @@
   .animation-delay-300 {
     animation-delay: 300ms;
   }
+  .eHeight {
+    height: calc(100vh - 225px);
+  }
 }
 
 body {
