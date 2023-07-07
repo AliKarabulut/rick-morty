@@ -36,14 +36,14 @@ const SearchResults = ({ fil, onClose }) => {
   return (
     <ul
       ref={ulRef}
-      className=" bg-background3 transition-all  text-background absolute text-sm top-0 mt-10 z-10 w-full border-2 border-solid border-text "
+      className=" bg-bgInput transition-all  text-text absolute text-sm top-0 mt-10 z-10 w-full border-2 border-solid border-inputBorder "
     >
       {fil.map((event, index) => {
         return (
           <li
             key={event.id}
-            className={`bg-background3 cursor-pointer leading-6 ${
-              selected === index ? "bg-slate-300" : ""
+            className={`bg-bgInput cursor-pointer leading-6 shadow-md ${
+              selected === index ? "bg-selected text-selectedText" : ""
             }`}
           >
             <Link prefetch={false} href={`/${event.id}`} className="block ml-4">

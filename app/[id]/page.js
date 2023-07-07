@@ -75,13 +75,13 @@ const getData = async (id) => {
 const CharacterInfo = async ({ params }) => {
   const data = await getData(params.id);
   return (
-    <div className=" w-full  text-center  grid grid-cols-1 lg:grid-cols-[repeat(2,minmax(auto,auto))] ">
+    <div className=" w-full  text-center  grid grid-cols-1  lg:grid-cols-[repeat(2,minmax(auto,auto))] ">
       <h1 className=" text-3xl font-bold text-background lg:col-start-1 lg:col-end-3 mb-8 max-sm:mb-4 ">
         {data.character.name}
       </h1>
 
-      <div className=" grid grid-cols-1 sm:grid-cols-2 w-fit max-sm:justify-items-center max-sm:w-full  ml-8 max-sm:ml-0 ">
-        <div className="rounded-l-3xl rounded-r-2xl ">
+      <div className=" grid grid-cols-[repeat(2,minmax(auto,auto))] max-sm:grid-cols-1 w-fit max-sm:justify-items-center max-sm:w-full  ml-8 max-sm:ml-0 ">
+        <div className="rounded-l-3xl rounded-r-2xl w-80 ">
           <Image
             src={data.character.image}
             alt={data.character.name}
@@ -125,11 +125,11 @@ const CharacterInfo = async ({ params }) => {
         </div>
       </div>
 
-      <div className="place-self-end lg:mr-8 ">
+      <div className="place-self-end max-lg:place-self-auto lg:mr-8 ">
         <h3 className="text-xl font-medium mb-4 text-gray-700 max-lg:mt-6">EPISODES</h3>
         <ul className="text-left max-lg:flex flex-wrap  gap-2 max-lg:mx-7  lg:eHeight overflow-y-auto ">
           {data.character.episode.map((episode, index) => {
-            const bgColor = index % 2 === 0 ? "bg-slate-200" : "bg-slate-300";
+            const bgColor = index % 2 === 0 ? "bg-li1" : "bg-li2";
             return (
               <li
                 key={index}

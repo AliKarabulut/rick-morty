@@ -8,12 +8,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#44281d",
-        background2: "#f1f1f1",
-        background3: "#ffffff",
-        text: "#e4a788",
-        hover: "#97ce4c",
-        icon: "#f0e14a",
+        bodyBack: "#D4EAF7",
+        navBack: "#007AB3",
+        inputBorder: "#009AB3",
+        placeholderColor: "#BEBEBE",
+        bgInput: "#FFFFFF",
+        shadow: "#333333",
+        selected: "#72A7D7",
+        selectedText: "#000000",
+        bgCard: "#72A7D7",
+        borderPicture: "#000000",
+        icon: "#007AB3",
+        text: "#000000",
+        li1: "#94BCE0",
+        li2: "#D28BE3",
+               
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -33,7 +42,6 @@ module.exports = {
         },
       },
     },
-    
   },
   plugins: [],
 };

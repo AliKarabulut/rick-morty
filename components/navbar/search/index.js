@@ -56,7 +56,7 @@ const Search = () => {
         type="text"
         placeholder="Search"
         spellCheck="false"
-        className="capitalize w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-background focus:outline-none focus:border-text focus:bg-white  focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-text hover:bg-white "
+        className="capitalize w-full h-10 leading-7 z-20 px-4 pl-10 border-2 border-solid border-transparent rounded-lg outline-none text-text transition-all placeholder:text-placeholderColor focus:outline-none focus:border-inputBorder focus:bg-bgInput focus:border-b-0 focus:rounded-b-none focus:transition-none hover:outline-none hover:border-inputBorder hover:bg-bgInput "
       />
       {active && (
         <SearchResults fil={filteredCharacters} onClose={blurHandler} />

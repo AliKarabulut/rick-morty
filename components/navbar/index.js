@@ -6,7 +6,7 @@ import { ApolloWrapper } from "@/lib/apollo-provider";
 
 const Navbar = () => {
   return (
-    <nav className="w-full flex justify-between items-center px-4 pb-2 shadow-md mb-4">
+    <nav className="w-full flex justify-between items-center px-4 pb-2 shadow-md shadow-shadow mb-4 bg-navBack">
       <Link href="/">
         <Image
           src="/logo.png"
