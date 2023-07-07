@@ -1,8 +1,6 @@
-import PageNumber from "@/components/UI/pageNumber";
 import CharacterCard from "@/components/characterCard";
 import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
-import { Fragment } from "react";
 
 const Page = async ({ searchParams }) => {
   const params = parseInt(searchParams?.page || 1, 10);

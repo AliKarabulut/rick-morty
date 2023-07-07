@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,9 +21,24 @@ module.exports = {
         borderPicture: "#000000",
         icon: "#007AB3",
         text: "#000000",
+        bigText: "#6B7280",
         li1: "#94BCE0",
         li2: "#D28BE3",
-               
+        dark_bodyBack: "#303030",
+        dark_navBack: "#282828",
+        dark_inputBorder: "#404040",
+        dark_placeholderColor: "#A0A0A0",
+        dark_bgInput: "#202020",
+        dark_shadow: "#000000",
+        dark_selected: "#303030",
+        dark_selectedText: "#FFFFFF",
+        dark_bgCard: "#1E1E1E",
+        dark_borderPicture: "#FFFFFF",
+        dark_icon: "#FFFFFF",
+        dark_text: "#C7CCD5",
+        dark_bigText:"#C7CCD5",
+        dark_li1: "#C7CCD5",
+        dark_li2: "#9BA2AD",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

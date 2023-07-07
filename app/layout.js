@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import ScroolUp from "@/components/scroolUp";
+import { cookies } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,9 +13,10 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+  const theme = cookies().get("theme");
   return (
-    <html lang="en">
-      <body className="bg-bodyBack">
+    <html lang="en" className={theme?.value}>
+      <body className={`${inter.className} bg-bodyBack dark:bg-dark_bodyBack`}>
         <Navbar />
         {children}
         <ScroolUp />
