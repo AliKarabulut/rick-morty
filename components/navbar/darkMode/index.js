@@ -24,7 +24,7 @@ const DarkMode = ({ theme }) => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center max-sm:ml-12 ">
       <label className="flex items-center">
         <div className="relative">
           <input

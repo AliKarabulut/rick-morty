@@ -1,12 +1,10 @@
 "use client";
-
-import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions as userActions } from "@/stores/viewed";
+import Link from "next/link";
 
 const SearchResults = ({ fil, onClose }) => {
-  const router = useRouter();
   const ulRef = useRef(null);
   const [selected, setSelected] = useState(-1);
   const dispatch = useDispatch();
@@ -35,10 +33,8 @@ const SearchResults = ({ fil, onClose }) => {
     };
   });
 
-  const handleRoute = (event) => {
-    router.push(`/${event.id}`);
+  const dispatchHandler = (event) => {
     dispatch(userActions.addviewed(event));
-
   };
 
   return (
@@ -49,7 +45,7 @@ const SearchResults = ({ fil, onClose }) => {
       {fil.map((event, index) => {
         return (
           <li
-            onClick={() => handleRoute(event)}
+            onClick={() => dispatchHandler(event)}
             key={event.id}
             className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 pl-4 py-[3px]  ${
               selected === index
@@ -57,7 +53,9 @@ const SearchResults = ({ fil, onClose }) => {
                 : ""
             }`}
           >
-            {event.name}
+            <Link href={`/${event.id}`} prefetch={false}>
+              {event.name}
+            </Link>
           </li>
         );
       })}

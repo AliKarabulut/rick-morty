@@ -18,11 +18,8 @@ export const generateMetadata = async ({ params }) => {
       variables: { characterId: params.id },
     });
 
-    const characterName = data?.character?.name || "Character";
-    const description = `${characterName}'s information page from Rick and Morty API`;
-
     return {
-      description,
+      description: `${characterName}'s information page from Rick and Morty API`
     };
   } catch (error) {
     return {
@@ -53,21 +50,22 @@ const getData = async (id) => {
     }
   `;
 
-  const { data } = await getClient().query({
-    query,
-    variables: { characterId: id },
-  });
-
-  return data;
+  try {
+    const { data } = await getClient().query({
+      query,
+      variables: { characterId: id },
+    });
+    return data;
+  } catch (error) {
+    notFound();
+  }
 };
 
 const CharacterInfo = async ({ params }) => {
   const data = await getData(params.id);
 
-  if (!data || !data.character || data.error) {
-    notFound();
-  }
   return (
+    
     <div className=" w-full  text-center  grid grid-cols-1  lg:grid-cols-[repeat(2,minmax(auto,auto))] ">
       <h1 className=" text-3xl font-bold text-background lg:col-start-1 lg:col-end-3 mb-8 max-sm:mb-4 ">
         {data.character.name}

@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const CharacterCard = (props) => {
-  const { image, name, status} = props.character;
+  const { image, name, status, id} = props.character;
   return (
-    <div className=" group relative bg-bgCard dark:bg-dark_bgCard rounded-lg shadow-lg p-4 mt-4 cursor-pointer transition duration-300 ease-in-out  hover:shadow-xl hover:scale-105">
+    <Link href={`/${id}`} prefetch={false}>
       <div className="w-48 h-48 mb-4">
         <Image
           src={image}
@@ -27,7 +28,7 @@ const CharacterCard = (props) => {
           height={40}
         />
       </div>
-    </div>
+    </Link>
   );
 };
 

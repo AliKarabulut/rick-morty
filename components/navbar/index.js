@@ -2,10 +2,9 @@ import Image from "next/image";
 import Search from "./search";
 import Link from "next/link";
 import { ApolloWrapper } from "@/lib/apollo-provider";
-import DarkMode from "./darkMode";
 import { cookies } from "next/headers";
-import { LuGithub } from "react-icons/lu";
-import { FaEye } from "react-icons/fa";
+
+import MobileMenu from "./mobileMenu";
 
 const Navbar = () => {
   const theme = cookies().get("theme")?.value === "dark" ? "dark" : "light";
@@ -24,16 +23,7 @@ const Navbar = () => {
       <ApolloWrapper>
         <Search />
       </ApolloWrapper>
-      <div className="flex gap-5 ml-3">
-        <DarkMode theme={theme} />
-        <Link href="lastViewed" className="flex items-center">
-          <FaEye className="w-5 h-5 mx-2 text-icon dark:text-dark_icon" />{" "}
-          <span className="max-sm:hidden text-dark_selectedText">Looked</span>
-        </Link>
-        <Link href="https://github.com/AliKarabulut/rick-morty" target="_blank">
-          <LuGithub className="w-5 h-5 text-icon dark:text-dark_icon" />
-        </Link>
-      </div>
+      <MobileMenu theme={theme}/>
     </nav>
   );
 };

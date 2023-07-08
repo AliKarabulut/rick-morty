@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -36,7 +36,7 @@ module.exports = {
         dark_borderPicture: "#FFFFFF",
         dark_icon: "#FFFFFF",
         dark_text: "#C7CCD5",
-        dark_bigText:"#C7CCD5",
+        dark_bigText: "#C7CCD5",
         dark_li1: "#C7CCD5",
         dark_li2: "#9BA2AD",
       },
@@ -50,11 +50,35 @@ module.exports = {
       },
       animation: {
         scale: "scale 1s ease-in-out infinite",
+        menu: "menu 1s ease-in-out",
+        menuButton: "menuButton 1s ease-in-out",
       },
       keyframes: {
         scale: {
           "0%, 100%": { transform: "scale(1)" },
           "33%": { transform: "scale(.3)" },
+        },
+        menu: {
+          "0%": {
+            width: "0%",
+            height: "fit-content",
+            top: "-250px",
+            right: "0px",
+          },
+          "100%": {
+            width: "50%",
+            height: "fit-content",
+            right: "0px",
+            top: "0px",
+          },
+        },
+        menuButton: {
+          "0%, 90%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          }
         },
       },
     },

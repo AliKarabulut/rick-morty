@@ -10,7 +10,7 @@ const Lastieved = (props) => {
   return (
     <Fragment>
       {viewed.length === 0 ? (
-        <div> You haven't looked at any characters before</div>
+        <div className="text-center mt-[20%] font-medium text-2xl"> You haven't looked at any characters before</div>
       ) : (
         <div className="grid gap-8  justify-items-center lg:px-16 lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2">
           {viewed.map((character) => {
