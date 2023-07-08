@@ -26,7 +26,7 @@ const Navbar = () => {
       </ApolloWrapper>
       <div className="flex gap-5 ml-3">
         <DarkMode theme={theme} />
-        <Link href="lastviewed" className="flex items-center">
+        <Link href="lastViewed" className="flex items-center">
           <FaEye className="w-5 h-5 mx-2 text-icon dark:text-dark_icon" />{" "}
           <span className="max-sm:hidden text-dark_selectedText">Looked</span>
         </Link>
