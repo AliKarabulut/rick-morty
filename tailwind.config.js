@@ -50,8 +50,8 @@ module.exports = {
       },
       animation: {
         scale: "scale 1s ease-in-out infinite",
-        menu: "menu 1s ease-in-out",
-        menuButton: "menuButton 1s ease-in-out",
+        menu: "menu .5s ease-in-out",
+        menuButton: "menuButton .5s ease-in-out",
       },
       keyframes: {
         scale: {

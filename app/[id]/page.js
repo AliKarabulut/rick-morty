@@ -120,7 +120,7 @@ const CharacterInfo = async ({ params }) => {
         <h3 className="text-xl font-medium mb-4 text-text dark:text-dark_text max-lg:mt-6">
           EPISODES
         </h3>
-        <ul className="text-left max-lg:flex flex-wrap   max-lg:mx-7  lg:eHeight overflow-y-auto ">
+        <ul className="text-left max-lg:flex flex-wrap   max-lg:px-7  lg:eHeight overflow-y-auto ">
           {data.character.episode.map((episode, index) => {
             const bgColor =
               index % 2 === 0
