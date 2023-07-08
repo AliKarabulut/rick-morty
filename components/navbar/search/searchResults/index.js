@@ -31,7 +31,7 @@ const SearchResults = ({ fil, onClose }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", entered ?  null: handleKeyDown);
+    window.addEventListener("keydown", entered ? null : handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -44,22 +44,29 @@ const SearchResults = ({ fil, onClose }) => {
   return (
     <ul
       ref={ulRef}
-      className=" bg-bgInput dark:bg-dark_bgInput transition-all  text-text dark:text-dark_text absolute text-sm top-0 mt-10 z-10 w-full border-2 border-solid border-inputBorder dark:border-dark_inputBorder "
+      className="bg-bgInput h-auto dark:bg-dark_bgInput transition-all text-text dark:text-dark_text absolute text-sm top-0 mt-10 z-10 w-full border-2 border-solid border-inputBorder dark:border-dark_inputBorder"
     >
       {fil.map((event, index) => {
         return (
           <li
             onClick={() => dispatchHandler(event)}
-            onMouseEnter={() => {setSelected(index) , setEntered(true)}}
-            onMouseLeave={() =>  setEntered(false)}
+            onMouseEnter={() => {
+              setSelected(index);
+              setEntered(true);
+            }}
+            onMouseLeave={() => setEntered(false)}
             key={event.id}
-            className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 pl-4 py-[3px] hover:bg-selected dark:hover:bg-dark_selected hover:text-selectedText dark:hover:text-dark_selectedText ${
+            className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer pl-4  hover:bg-selected dark:hover:bg-dark_selected hover:text-selectedText dark:hover:text-dark_selectedText ${
               selected === index
                 ? "bg-selected dark:bg-dark_selected text-selectedText dark:text-dark_selectedText"
                 : ""
             }`}
           >
-            <Link href={`/${event.id}`} prefetch={false}>
+            <Link
+              href={`/${event.id}`}
+              prefetch={false}
+              className="py-[3px] w-full block"
+            >
               {event.name}
             </Link>
           </li>

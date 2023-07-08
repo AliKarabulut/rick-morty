@@ -48,7 +48,7 @@ const Search = () => {
   };
 
   return (
-    <div className="flex leading-7 relative items-center sm:basis-5/12 md:basis-7/12 lg:basis-5/12 2xl:basis-2/5  ">
+    <div className="flex leading-7 mx-2 relative items-center sm:basis-5/12 md:basis-7/12 lg:basis-5/12 2xl:basis-2/5  ">
       <BsSearch className="absolute left-4 text-icon dark:text-dark_icon w-4 h-4 z-30" />
       <input
         ref={inputRef}
