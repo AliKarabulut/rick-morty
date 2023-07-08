@@ -9,6 +9,8 @@ const SearchResults = ({ fil, onClose }) => {
   const ulRef = useRef(null);
   const router = useRouter();
   const [selected, setSelected] = useState(-1);
+  const [entered, setEntered] = useState(false);
+
   const dispatch = useDispatch();
   const handleKeyDown = (event) => {
     switch (event.key) {
@@ -29,7 +31,7 @@ const SearchResults = ({ fil, onClose }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", entered ?  null: handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -48,8 +50,10 @@ const SearchResults = ({ fil, onClose }) => {
         return (
           <li
             onClick={() => dispatchHandler(event)}
+            onMouseEnter={() => {setSelected(index) , setEntered(true)}}
+            onMouseLeave={() =>  setEntered(false)}
             key={event.id}
-            className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 pl-4 py-[3px]  ${
+            className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 pl-4 py-[3px] hover:bg-selected dark:hover:bg-dark_selected hover:text-selectedText dark:hover:text-dark_selectedText ${
               selected === index
                 ? "bg-selected dark:bg-dark_selected text-selectedText dark:text-dark_selectedText"
                 : ""

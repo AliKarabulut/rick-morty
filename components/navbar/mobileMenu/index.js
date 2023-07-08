@@ -16,7 +16,7 @@ const MobileMenu = ({ theme }) => {
   return (
     <Fragment>
       <div
-        className={`flex gap-5  max-sm:absolute max-sm:w-50 max-sm:h-fit max-sm:w-[50%]  max-sm:py-20 max-sm:flex max-sm:items-center max-sm:justify-end max-sm:flex-col  max-sm:bg-navBack dark:max-sm:bg-dark_navBack z-30 max-sm:animate-menu max-sm:shadow-2xl max-sm:shadow-shadow max-sm:rounded-es-full  ${
+        className={`flex gap-5 overflow-hidden max-sm:absolute max-sm:w-50 max-sm:h-fit max-sm:w-[50%]  max-sm:py-20 max-sm:flex max-sm:items-center max-sm:justify-end max-sm:flex-col  max-sm:bg-navBack dark:max-sm:bg-dark_navBack z-30 max-sm:animate-menu max-sm:shadow-2xl max-sm:shadow-shadow max-sm:rounded-es-full  ${
           show
             ? "max-sm:right-0 max-sm:top-0  "
             : "max-sm:hidden max-sm:top-[-350px] max-sm:right-[-50px]"
@@ -29,7 +29,7 @@ const MobileMenu = ({ theme }) => {
           className="flex items-center max-sm:ml-12"
         >
           <FaEye className="w-5 h-5 mx-2 text-icon dark:text-dark_icon max-sm:hidden" />{" "}
-          <span className=" text-dark_selectedText">Looked</span>
+          <span className=" text-dark_selectedText select-none">Looked</span>
         </Link>
         <Link
           href="https://github.com/AliKarabulut/rick-morty"
