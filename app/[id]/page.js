@@ -31,6 +31,9 @@ const getData = async (id) => {
     variables: { characterId: id },
   });
 
+  if (!data || !data.character) {
+     notFound();
+  }
   return data;
 };
 
@@ -38,7 +41,7 @@ const CharacterInfo = async({ params }) => {
   const data = await getData(params.id);
 
   if (!data || !data.character) {
-    return notFound();
+    notFound();
   }
   return (
     <div className=" w-full  text-center  grid grid-cols-1  lg:grid-cols-[repeat(2,minmax(auto,auto))] ">
