@@ -3,12 +3,10 @@ import CharacterCardWrapper from "@/components/characterCard/characterCardWrappe
 import PageNumber from "@/components/pagination";
 import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
-import Link from "next/link";
 import { Fragment } from "react";
 
 const Page = async ({ searchParams }) => {
   const params = parseInt(searchParams?.page || 1, 10);
-  console.log(params);
   const query = gql`
     query Query($page: Int) {
       characters(page: $page) {
