@@ -3,9 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions as userActions } from "@/stores/viewed";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SearchResults = ({ fil, onClose }) => {
   const ulRef = useRef(null);
+  const router = useRouter();
   const [selected, setSelected] = useState(-1);
   const dispatch = useDispatch();
   const handleKeyDown = (event) => {
