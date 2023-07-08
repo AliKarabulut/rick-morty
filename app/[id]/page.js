@@ -117,14 +117,14 @@ const CharacterInfo = async ({ params }) => {
         <h3 className="text-xl font-medium mb-4 text-text dark:text-dark_text max-lg:mt-6">
           EPISODES
         </h3>
-        <ul className="text-left max-lg:flex flex-wrap  gap-2 max-lg:mx-7  lg:eHeight overflow-y-auto ">
+        <ul className="text-left max-lg:flex flex-wrap   max-lg:mx-7  lg:eHeight overflow-y-auto ">
           {data.character.episode.map((episode, index) => {
             const bgColor =
               index % 2 === 0 ? "bg-li1 dark:bg-dark_li1" : "bg-li2 dark:bg-dark_li2";
             return (
               <li
                 key={index}
-                className={`mb-2 lg:mx-4 grow rounded-lg p-2 transition ease-in-out duration-300 transform hover:scale-105 cursor-pointer ${bgColor}`}
+                className={`mb-2 lg:mx-4 grow rounded-lg p-2 m-1 transition ease-in-out duration-300 transform hover:scale-105 cursor-pointer ${bgColor}`}
               >
                 {episode.name}
               </li>

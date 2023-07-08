@@ -16,7 +16,7 @@ const Search = () => {
     clearTimeout(timerId);
     timerId = setTimeout(() => {
       setSearch(event.target.value);
-    }, 75);
+    }, 100);
   };
 
   const GET_CHARACTERS = gql`

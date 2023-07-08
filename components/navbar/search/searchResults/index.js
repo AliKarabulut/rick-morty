@@ -20,6 +20,7 @@ const SearchResults = ({ fil, onClose }) => {
         break;
       case "Enter":
         router.push(`/${fil[selected].id}`);
+        dispatch(userActions.addviewed(fil[selected]));
         onClose();
         break;
       default:
@@ -35,8 +36,9 @@ const SearchResults = ({ fil, onClose }) => {
   });
 
   const handleRoute = (event) => {
-    dispatch(userActions.addviewed(event));
     router.push(`/${event.id}`);
+    dispatch(userActions.addviewed(event));
+
   };
 
   return (
@@ -49,7 +51,7 @@ const SearchResults = ({ fil, onClose }) => {
           <li
             onClick={() => handleRoute(event)}
             key={event.id}
-            className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 shadow-md ${
+            className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 pl-4 py-[3px]  ${
               selected === index
                 ? "bg-selected dark:bg-dark_selected text-selectedText dark:text-dark_selectedText"
                 : ""
