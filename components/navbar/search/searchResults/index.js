@@ -1,14 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { actions as userActions } from "@/stores/viewed";
 
 const SearchResults = ({ fil, onClose }) => {
   const router = useRouter();
   const ulRef = useRef(null);
   const [selected, setSelected] = useState(-1);
-
+  const dispatch = useDispatch();
   const handleKeyDown = (event) => {
     switch (event.key) {
       case "ArrowUp":
@@ -33,6 +34,11 @@ const SearchResults = ({ fil, onClose }) => {
     };
   });
 
+  const handleRoute = (event) => {
+    dispatch(userActions.addviewed(event));
+    router.push(`/${event.id}`);
+  };
+
   return (
     <ul
       ref={ulRef}
@@ -41,14 +47,15 @@ const SearchResults = ({ fil, onClose }) => {
       {fil.map((event, index) => {
         return (
           <li
+            onClick={() => handleRoute(event)}
             key={event.id}
             className={`bg-bgInput dark:bg-dark_bgInput cursor-pointer leading-6 shadow-md ${
-              selected === index ? "bg-selected dark:bg-dark_selected text-selectedText dark:text-dark_selectedText" : ""
+              selected === index
+                ? "bg-selected dark:bg-dark_selected text-selectedText dark:text-dark_selectedText"
+                : ""
             }`}
           >
-            <Link prefetch={false} href={`/${event.id}`} className="block ml-4">
-              {event.name}
-            </Link>
+            {event.name}
           </li>
         );
       })}

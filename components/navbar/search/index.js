@@ -25,6 +25,8 @@ const Search = () => {
         results {
           name
           id
+          image
+          status
         }
       }
     }
