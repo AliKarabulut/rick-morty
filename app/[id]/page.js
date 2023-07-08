@@ -62,7 +62,7 @@ const getData = async (id) => {
 };
 
 const CharacterInfo = async ({ params }) => {
-  const data = async getData(params.id);
+  const data = await getData(params.id);
 
   if (!data || !data.character || data.error) {
     notFound();
