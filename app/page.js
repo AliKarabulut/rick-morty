@@ -4,7 +4,7 @@ import PageNumber from "@/components/pagination";
 import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
 import { Fragment } from "react";
-
+import {notFound} from "next/navigation" 
 const Page = async ({ searchParams }) => {
   const params = parseInt(searchParams?.page || 1, 10);
   const query = gql`
@@ -28,7 +28,7 @@ const Page = async ({ searchParams }) => {
     query,
     variables: { page: params },
   });
-
+if(data.characters.results.length === 0){notFound()}
   return (
     <Fragment>
       <main className="grid gap-8 justify-items-center lg:px-16 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
