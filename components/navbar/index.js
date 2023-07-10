@@ -3,7 +3,6 @@ import Search from "./search";
 import Link from "next/link";
 import { ApolloWrapper } from "@/lib/apollo-provider";
 import { cookies } from "next/headers";
-
 import MobileMenu from "./mobileMenu";
 
 const Navbar = () => {
@@ -23,7 +22,7 @@ const Navbar = () => {
       <ApolloWrapper>
         <Search />
       </ApolloWrapper>
-      <MobileMenu theme={theme}/>
+      <MobileMenu theme={theme} />
     </nav>
   );
 };

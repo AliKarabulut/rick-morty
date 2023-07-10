@@ -6,11 +6,9 @@ import { gql } from "@apollo/client";
 import { Fragment } from "react";
 import { notFound } from "next/navigation";
 const Page = async ({ searchParams }) => {
-  console.log(searchParams.page);
   const params = isNaN(Number(searchParams.page))
     ? 1
     : Number(searchParams.page);
-  console.log(params);
 
   const query = gql`
     query Query($page: Int) {

@@ -19,7 +19,7 @@ export const generateMetadata = async ({ params }) => {
     });
 
     return {
-      description: `${characterName}'s information page from Rick and Morty API`
+      description: `${data.character.name}'s information page from Rick and Morty API`,
     };
   } catch (error) {
     return {
@@ -65,7 +65,6 @@ const CharacterInfo = async ({ params }) => {
   const data = await getData(params.id);
 
   return (
-    
     <div className=" w-full  text-center  grid grid-cols-1  lg:grid-cols-[repeat(2,minmax(auto,auto))] ">
       <h1 className=" text-3xl font-bold text-background lg:col-start-1 lg:col-end-3 mb-8 max-sm:mb-4 ">
         {data.character.name}
