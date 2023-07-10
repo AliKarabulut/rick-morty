@@ -52,6 +52,10 @@ module.exports = {
         scale: "scale 1s ease-in-out infinite",
         menu: "menu .5s ease-in-out",
         menuButton: "menuButton .5s ease-in-out",
+        image: "image .4s ease-in-out",
+        text: "text .4s ease-in-out",
+        text2: "text2 .4s ease-in-out",
+        text3: "text3 .4s ease-in-out",
       },
       keyframes: {
         scale: {
@@ -78,7 +82,45 @@ module.exports = {
           },
           "100%": {
             opacity: "1",
-          }
+          },
+        },
+        image: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
+        text: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-100px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px)",
+          },
+        },
+        text2: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-100px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px)",
+          },
+        },
+        text3: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(100px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px)",
+          },
         },
       },
     },

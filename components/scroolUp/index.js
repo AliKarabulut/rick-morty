@@ -24,7 +24,7 @@ const ScrollUpButton = () => {
     <div>
       {isVisible && (
         <AiOutlineArrowUp
-          className="fixed cursor-pointer bottom-16 right-6 w-10 h-10 animate-bounce "
+          className="fixed cursor-pointer bottom-8 right-8 max-md:bottom-16 max-md:right-6 w-10 h-10 animate-bounce "
           onClick={scrollToTop}
         />
       )}

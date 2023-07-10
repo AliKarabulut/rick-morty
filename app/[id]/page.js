@@ -66,7 +66,7 @@ const CharacterInfo = async ({ params }) => {
 
   return (
     <div className=" w-full  text-center  grid grid-cols-1  lg:grid-cols-[repeat(2,minmax(auto,auto))] ">
-      <h1 className=" text-3xl font-bold text-background lg:col-start-1 lg:col-end-3 mb-8 max-sm:mb-4 ">
+      <h1 className="animate-text2 z-[-1] text-3xl font-bold text-background lg:col-start-1 lg:col-end-3 mb-8 max-sm:mb-4 ">
         {data.character.name}
       </h1>
 
@@ -79,11 +79,11 @@ const CharacterInfo = async ({ params }) => {
             height={300}
             placeholder="blur"
             blurDataURL="/grey2.png"
-            className="rounded-l-3xl rounded-r-2xl transition-transform duration-300 transform hover:scale-105"
+            className="animate-image select-none rounded-l-3xl rounded-r-2xl transition-transform duration-300 transform hover:scale-105"
           />
         </div>
-        <div className="ml-8 text-left max-sm:ml-0 max-sm:mt-4 ">
-          <h2 className="text-xl font-bold max:smtext-center">
+        <div className="animate-text ml-8 text-left max-sm:ml-0 max-sm:mt-4 ">
+          <h2 className="text-xl text-center font-bold max:smtext-center">
             Character Informations
           </h2>
           <div className="gap-4 mt-4 grid grid-cols-2">
@@ -115,7 +115,7 @@ const CharacterInfo = async ({ params }) => {
         </div>
       </div>
 
-      <div className="place-self-end max-lg:place-self-auto lg:mr-8 ">
+      <div className="animate-text3 place-self-end max-lg:place-self-auto lg:mr-8 ">
         <h3 className="text-xl font-medium mb-4 text-text dark:text-dark_text max-lg:mt-6">
           EPISODES
         </h3>

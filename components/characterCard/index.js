@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CharacterCard = (props) => {
-  const { image, name, status, id} = props.character;
+  const { image, name, status, id } = props.character;
   return (
-    <Link href={`/${id}`} prefetch={false}>
+    <Link href={`/${id}`} prefetch={false} className="select-none ">
       <div className="w-48 h-48 mb-4">
         <Image
           src={image}
           width={300}
           height={300}
-          className="rounded-lg transition duration-300 ease-in-out grayscale-[30%] group-hover:grayscale-[0%] group-hover:scale-105 shadow-lg  "
+          className="animate-image rounded-lg transition duration-300 ease-in-out grayscale-[30%] group-hover:grayscale-[0%] group-hover:scale-105 shadow-lg  "
           alt={name}
           placeholder="blur"
           blurDataURL="/grey2.png"
